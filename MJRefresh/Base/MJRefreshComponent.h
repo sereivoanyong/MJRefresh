@@ -92,11 +92,11 @@ typedef void (^MJRefreshComponentAction)(void);
 /** 摆放子控件frame */
 - (void)placeSubviews NS_REQUIRES_SUPER;
 /** 当scrollView的contentOffset发生改变的时候调用 */
-- (void)scrollViewContentOffsetDidChange:(nullable NSDictionary *)change NS_REQUIRES_SUPER;
+- (void)scrollViewContentOffsetDidChange:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change NS_REQUIRES_SUPER;
 /** 当scrollView的contentSize发生改变的时候调用 */
-- (void)scrollViewContentSizeDidChange:(nullable NSDictionary *)change NS_REQUIRES_SUPER;
+- (void)scrollViewContentSizeDidChange:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change NS_REQUIRES_SUPER;
 /** 当scrollView的拖拽状态发生改变的时候调用 */
-- (void)scrollViewPanStateDidChange:(nullable NSDictionary *)change NS_REQUIRES_SUPER;
+- (void)scrollViewPanStateDidChange:(nullable NSDictionary<NSKeyValueChangeKey, id> *)change NS_REQUIRES_SUPER;
 
 /** 多语言配置 language 发生变化时调用
  

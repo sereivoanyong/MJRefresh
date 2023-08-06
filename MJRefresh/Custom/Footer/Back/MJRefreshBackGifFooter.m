@@ -50,7 +50,7 @@
 }
 
 #pragma mark - 公共方法
-- (instancetype)setImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state
+- (instancetype)setImages:(NSArray<UIImage *> *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state
 {
     if (images == nil) return self;
     
@@ -65,7 +65,7 @@
     return self;
 }
 
-- (instancetype)setImages:(NSArray *)images forState:(MJRefreshState)state
+- (instancetype)setImages:(NSArray<UIImage *> *)images forState:(MJRefreshState)state
 {
     return [self setImages:images duration:images.count * 0.1 forState:state];
 }
@@ -82,7 +82,7 @@
 - (void)setPullingPercent:(CGFloat)pullingPercent
 {
     [super setPullingPercent:pullingPercent];
-    NSArray *images = self.stateImages[@(MJRefreshStateIdle)];
+    NSArray<UIImage *> *images = self.stateImages[@(MJRefreshStateIdle)];
     if (self.state != MJRefreshStateIdle || images.count == 0) return;
     [self.gifView stopAnimating];
     NSUInteger index =  images.count * pullingPercent;
@@ -111,7 +111,7 @@
     
     // 根据状态做事情
     if (state == MJRefreshStatePulling || state == MJRefreshStateRefreshing) {
-        NSArray *images = self.stateImages[@(state)];
+        NSArray<UIImage *> *images = self.stateImages[@(state)];
         if (images.count == 0) return;
         
         self.gifView.hidden = NO;

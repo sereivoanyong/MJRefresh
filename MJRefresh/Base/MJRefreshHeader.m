@@ -70,7 +70,7 @@ NSString * const MJRefreshHeaderRefreshingBoundsKey = @"MJRefreshHeaderRefreshin
     }
 }
 
-- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
+- (void)scrollViewContentOffsetDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change
 {
     [super scrollViewContentOffsetDidChange:change];
     

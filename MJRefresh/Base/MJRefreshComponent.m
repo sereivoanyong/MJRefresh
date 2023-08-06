@@ -128,9 +128,9 @@
     }
 }
 
-- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change{}
-- (void)scrollViewContentSizeDidChange:(NSDictionary *)change{}
-- (void)scrollViewPanStateDidChange:(NSDictionary *)change{}
+- (void)scrollViewContentOffsetDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change{}
+- (void)scrollViewContentSizeDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change{}
+- (void)scrollViewPanStateDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change{}
 
 - (void)i18nDidChange {
     [self placeSubviews];

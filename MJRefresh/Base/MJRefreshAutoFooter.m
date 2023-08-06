@@ -53,7 +53,7 @@
     self.autoTriggerTimes = 1;
 }
 
-- (void)scrollViewContentSizeDidChange:(NSDictionary *)change
+- (void)scrollViewContentSizeDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change
 {
     [super scrollViewContentSizeDidChange:change];
     
@@ -66,7 +66,7 @@
     }
 }
 
-- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change
+- (void)scrollViewContentOffsetDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change
 {
     [super scrollViewContentOffsetDidChange:change];
     
@@ -76,8 +76,8 @@
         // 这里的_scrollView.mj_contentH替换掉self.mj_y更为合理
         if (_scrollView.mj_offsetY >= _scrollView.mj_contentH - _scrollView.mj_h + self.mj_h * self.triggerAutomaticallyRefreshPercent + _scrollView.mj_insetB - self.mj_h) {
             // 防止手松开时连续调用
-            CGPoint old = [change[@"old"] CGPointValue];
-            CGPoint new = [change[@"new"] CGPointValue];
+            CGPoint old = [change[NSKeyValueChangeOldKey] CGPointValue];
+            CGPoint new = [change[NSKeyValueChangeNewKey] CGPointValue];
             if (new.y <= old.y) return;
             
             if (_scrollView.isDragging) {
@@ -89,7 +89,7 @@
     }
 }
 
-- (void)scrollViewPanStateDidChange:(NSDictionary *)change
+- (void)scrollViewPanStateDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change
 {
     [super scrollViewPanStateDidChange:change];
     

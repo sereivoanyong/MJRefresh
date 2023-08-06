@@ -31,7 +31,7 @@
     CGSize newSize = self.collectionViewContentSize;
     CGSize oldSize = self.collectionView.contentSize;
     if (footer != nil && !CGSizeEqualToSize(newSize, oldSize)) {
-        NSDictionary *changed = @{
+        NSDictionary<NSKeyValueChangeKey, id> *changed = @{
             NSKeyValueChangeNewKey: [NSValue valueWithCGSize:newSize],
             NSKeyValueChangeOldKey: [NSValue valueWithCGSize:oldSize],
         };

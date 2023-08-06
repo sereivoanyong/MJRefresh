@@ -31,7 +31,7 @@
     return cmp;
 }
 
-- (void)scrollViewContentOffsetDidChange:(NSDictionary *)change {
+- (void)scrollViewContentOffsetDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change {
     [super scrollViewContentOffsetDidChange:change];
     
     // 如果正在刷新，直接返回
@@ -124,7 +124,7 @@
     }
 }
 
-- (void)scrollViewContentSizeDidChange:(NSDictionary *)change {
+- (void)scrollViewContentSizeDidChange:(NSDictionary<NSKeyValueChangeKey, id> *)change {
     [super scrollViewContentSizeDidChange:change];
     
     // 内容的宽度

@@ -17,9 +17,9 @@
     __unsafe_unretained UIImageView *_gifView;
 }
 /** 所有状态对应的动画图片 */
-@property (strong, nonatomic) NSMutableDictionary *stateImages;
+@property (strong, nonatomic) NSMutableDictionary<NSNumber *, NSArray<UIImage *> *> *stateImages;
 /** 所有状态对应的动画时间 */
-@property (strong, nonatomic) NSMutableDictionary *stateDurations;
+@property (strong, nonatomic) NSMutableDictionary<NSNumber *, NSNumber *> *stateDurations;
 @end
 
 @implementation MJRefreshAutoGifFooter
@@ -33,7 +33,7 @@
     return _gifView;
 }
 
-- (NSMutableDictionary *)stateImages
+- (NSMutableDictionary<NSNumber *, NSArray<UIImage *> *> *)stateImages
 {
     if (!_stateImages) {
         self.stateImages = [NSMutableDictionary dictionary];
@@ -41,7 +41,7 @@
     return _stateImages;
 }
 
-- (NSMutableDictionary *)stateDurations
+- (NSMutableDictionary<NSNumber *, NSNumber *> *)stateDurations
 {
     if (!_stateDurations) {
         self.stateDurations = [NSMutableDictionary dictionary];
@@ -50,7 +50,7 @@
 }
 
 #pragma mark - 公共方法
-- (instancetype)setImages:(NSArray *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state
+- (instancetype)setImages:(NSArray<UIImage *> *)images duration:(NSTimeInterval)duration forState:(MJRefreshState)state
 {
     if (images == nil) return self;
     
@@ -65,7 +65,7 @@
     return self;
 }
 
-- (instancetype)setImages:(NSArray *)images forState:(MJRefreshState)state
+- (instancetype)setImages:(NSArray<UIImage *> *)images forState:(MJRefreshState)state
 {
     return [self setImages:images duration:images.count * 0.1 forState:state];
 }
@@ -100,7 +100,7 @@
     
     // 根据状态做事情
     if (state == MJRefreshStateRefreshing) {
-        NSArray *images = self.stateImages[@(state)];
+        NSArray<UIImage *> *images = self.stateImages[@(state)];
         if (images.count == 0) return;
         [self.gifView stopAnimating];
         
