@@ -31,8 +31,8 @@ UIKIT_EXTERN const CGFloat MJRefreshLabelLeftInset;
 UIKIT_EXTERN const CGFloat MJRefreshHeaderHeight;
 UIKIT_EXTERN const CGFloat MJRefreshFooterHeight;
 UIKIT_EXTERN const CGFloat MJRefreshTrailWidth;
-UIKIT_EXTERN const CGFloat MJRefreshFastAnimationDuration;
-UIKIT_EXTERN const CGFloat MJRefreshSlowAnimationDuration;
+UIKIT_EXTERN const NSTimeInterval MJRefreshFastAnimationDuration;
+UIKIT_EXTERN const NSTimeInterval MJRefreshSlowAnimationDuration;
 
 
 UIKIT_EXTERN NSString *const MJRefreshKeyPathContentOffset;

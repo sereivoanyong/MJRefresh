@@ -5,8 +5,8 @@ const CGFloat MJRefreshLabelLeftInset = 25;
 const CGFloat MJRefreshHeaderHeight = 54.0;
 const CGFloat MJRefreshFooterHeight = 44.0;
 const CGFloat MJRefreshTrailWidth = 60.0;
-const CGFloat MJRefreshFastAnimationDuration = 0.25;
-const CGFloat MJRefreshSlowAnimationDuration = 0.4;
+const NSTimeInterval MJRefreshFastAnimationDuration = 0.25;
+const NSTimeInterval MJRefreshSlowAnimationDuration = 0.4;
 
 
 NSString *const MJRefreshKeyPathContentOffset = @"contentOffset";
