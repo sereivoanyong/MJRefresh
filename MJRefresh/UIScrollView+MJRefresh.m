@@ -76,27 +76,6 @@ static const char MJRefreshTrailerKey = '\0';
     return objc_getAssociatedObject(self, &MJRefreshTrailerKey);
 }
 
-#pragma mark - 过期
-- (void)setFooter:(MJRefreshFooter *)footer
-{
-    self.mj_footer = footer;
-}
-
-- (MJRefreshFooter *)footer
-{
-    return self.mj_footer;
-}
-
-- (void)setHeader:(MJRefreshHeader *)header
-{
-    self.mj_header = header;
-}
-
-- (MJRefreshHeader *)header
-{
-    return self.mj_header;
-}
-
 #pragma mark - other
 - (NSInteger)mj_totalDataCount
 {

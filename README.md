@@ -196,12 +196,12 @@ UIView+MJExtension.h        UIView+MJExtension.m
 ```objc
 @interface MJRefreshFooter : MJRefreshComponent
 /** Creat footer */
-+ (instancetype)footerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
++ (instancetype)footerWithRefreshingBlock:(MJRefreshComponentAction)refreshingBlock;
 /** Creat footer */
 + (instancetype)footerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
 
-/** NoticeNoMoreData */
-- (void)noticeNoMoreData;
+/** EndRefreshingWithNoMoreData */
+- (void)endRefreshingWithNoMoreData;
 /** ResetNoMoreData（Clear the status of NoMoreData ） */
 - (void)resetNoMoreData;
 
@@ -349,7 +349,7 @@ footer.refreshingTitleHidden = YES;
 ## <a id="The_pull_to_refresh_04-All_loaded"></a>The pull to refresh 04-All loaded
 ```objc
 //Become the status of NoMoreData
-[footer noticeNoMoreData];
+[footer endRefreshingWithNoMoreData];
 ```
 ![(上拉刷新04-全部加载完毕)](http://images0.cnblogs.com/blog2015/497279/201506/141205248634686.gif)
 

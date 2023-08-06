@@ -16,6 +16,7 @@
     __unsafe_unretained UIImageView *_arrowView;
 }
 @property (weak, nonatomic) UIActivityIndicatorView *loadingView;
+@property (assign, nonatomic, readonly) UIActivityIndicatorViewStyle activityIndicatorViewStyle;
 @end
 
 @implementation MJRefreshNormalHeader
@@ -32,7 +33,7 @@
 - (UIActivityIndicatorView *)loadingView
 {
     if (!_loadingView) {
-        UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:_activityIndicatorViewStyle];
+        UIActivityIndicatorView *loadingView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:self.activityIndicatorViewStyle];
         loadingView.hidesWhenStopped = YES;
         [self addSubview:_loadingView = loadingView];
     }
@@ -40,29 +41,17 @@
 }
 
 #pragma mark - 公共方法
-- (void)setActivityIndicatorViewStyle:(UIActivityIndicatorViewStyle)activityIndicatorViewStyle
-{
-    _activityIndicatorViewStyle = activityIndicatorViewStyle;
-    
-    [self.loadingView removeFromSuperview];
-    self.loadingView = nil;
-    [self setNeedsLayout];
+- (UIActivityIndicatorViewStyle)activityIndicatorViewStyle {
+#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
+  if (@available(iOS 13.0, *)) {
+    return UIActivityIndicatorViewStyleMedium;
+  }
+#endif
+
+  return UIActivityIndicatorViewStyleGray;
 }
 
 #pragma mark - 重写父类的方法
-- (void)prepare
-{
-    [super prepare];
-    
-#if __IPHONE_OS_VERSION_MAX_ALLOWED >= 130000
-    if (@available(iOS 13.0, *)) {
-        _activityIndicatorViewStyle = UIActivityIndicatorViewStyleMedium;
-        return;
-    }
-#endif
-    
-    _activityIndicatorViewStyle = UIActivityIndicatorViewStyleGray;
-}
 
 - (void)placeSubviews
 {

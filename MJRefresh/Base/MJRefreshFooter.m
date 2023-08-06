@@ -36,9 +36,6 @@
     
     // 设置自己的高度
     self.mj_h = MJRefreshFooterHeight;
-    
-    // 默认不会自动隐藏
-//    self.automaticallyHidden = NO;
 }
 
 #pragma mark . 链式语法部分 .
@@ -54,18 +51,8 @@
     MJRefreshDispatchAsyncOnMainQueue(self.state = MJRefreshStateNoMoreData;)
 }
 
-- (void)noticeNoMoreData
-{
-    [self endRefreshingWithNoMoreData];
-}
-
 - (void)resetNoMoreData
 {
     MJRefreshDispatchAsyncOnMainQueue(self.state = MJRefreshStateIdle;)
-}
-
-- (void)setAutomaticallyHidden:(BOOL)automaticallyHidden
-{
-    _automaticallyHidden = automaticallyHidden;
 }
 @end

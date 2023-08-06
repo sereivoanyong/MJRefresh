@@ -29,13 +29,6 @@ typedef NS_ENUM(NSInteger, MJRefreshState) {
     MJRefreshStateNoMoreData
 };
 
-/** 进入刷新状态的回调 */
-typedef void (^MJRefreshComponentRefreshingBlock)(void) MJRefreshDeprecated("first deprecated in 3.3.0 - Use `MJRefreshComponentAction` instead");
-/** 开始刷新后的回调(进入刷新状态后的回调) */
-typedef void (^MJRefreshComponentBeginRefreshingCompletionBlock)(void) MJRefreshDeprecated("first deprecated in 3.3.0 - Use `MJRefreshComponentAction` instead");
-/** 结束刷新后的回调 */
-typedef void (^MJRefreshComponentEndRefreshingCompletionBlock)(void) MJRefreshDeprecated("first deprecated in 3.3.0 - Use `MJRefreshComponentAction` instead");
-
 /** 刷新用到的回调类型 */
 typedef void (^MJRefreshComponentAction)(void);
 
@@ -75,8 +68,6 @@ typedef void (^MJRefreshComponentAction)(void);
 - (void)beginRefreshingWithCompletionBlock:(void (^)(void))completionBlock;
 /** 开始刷新后的回调(进入刷新状态后的回调) */
 @property (copy, nonatomic, nullable) MJRefreshComponentAction beginRefreshingCompletionBlock;
-/** 带动画的结束刷新的回调 */
-@property (copy, nonatomic, nullable) MJRefreshComponentAction endRefreshingAnimateCompletionBlock MJRefreshDeprecated("first deprecated in 3.3.0 - Use `endRefreshingAnimationBeginAction` instead");
 @property (copy, nonatomic, nullable) MJRefreshComponentAction endRefreshingAnimationBeginAction;
 /** 结束刷新的回调 */
 @property (copy, nonatomic, nullable) MJRefreshComponentAction endRefreshingCompletionBlock;
@@ -118,8 +109,6 @@ typedef void (^MJRefreshComponentAction)(void);
 #pragma mark - 其他
 /** 拉拽的百分比(交给子类重写) */
 @property (assign, nonatomic) CGFloat pullingPercent;
-/** 根据拖拽比例自动切换透明度 */
-@property (assign, nonatomic, getter=isAutoChangeAlpha) BOOL autoChangeAlpha MJRefreshDeprecated("请使用automaticallyChangeAlpha属性");
 /** 根据拖拽比例自动切换透明度 */
 @property (assign, nonatomic, getter=isAutomaticallyChangeAlpha) BOOL automaticallyChangeAlpha;
 @end

@@ -199,16 +199,6 @@
 }
 
 #pragma mark 自动切换透明度
-- (void)setAutoChangeAlpha:(BOOL)autoChangeAlpha
-{
-    self.automaticallyChangeAlpha = autoChangeAlpha;
-}
-
-- (BOOL)isAutoChangeAlpha
-{
-    return self.isAutomaticallyChangeAlpha;
-}
-
 - (void)setAutomaticallyChangeAlpha:(BOOL)automaticallyChangeAlpha
 {
     _automaticallyChangeAlpha = automaticallyChangeAlpha;
@@ -254,11 +244,6 @@
     self.slowAnimationDuration = 0;
     
     return self;
-}
-
-#pragma mark - <<< Deprecation compatible function >>> -
-- (void)setEndRefreshingAnimateCompletionBlock:(MJRefreshComponentEndRefreshingCompletionBlock)endRefreshingAnimateCompletionBlock {
-    _endRefreshingAnimationBeginAction = endRefreshingAnimateCompletionBlock;
 }
 @end
 
