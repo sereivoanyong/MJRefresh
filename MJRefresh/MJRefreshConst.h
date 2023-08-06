@@ -62,7 +62,7 @@ UIKIT_EXTERN NSString *const MJRefreshHeaderLastTimeText;
 UIKIT_EXTERN NSString *const MJRefreshHeaderDateTodayText;
 UIKIT_EXTERN NSString *const MJRefreshHeaderNoneLastDateText;
 
-UIKIT_EXTERN NSString *const MJRefreshDidChangeLanguageNotification;
+UIKIT_EXTERN NSNotificationName const MJRefreshDidChangeLanguageNotification;
 
 // 状态检查
 #define MJRefreshCheckState \

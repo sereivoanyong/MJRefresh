@@ -36,4 +36,4 @@ NSString *const MJRefreshHeaderLastTimeText = @"MJRefreshHeaderLastTimeText";
 NSString *const MJRefreshHeaderDateTodayText = @"MJRefreshHeaderDateTodayText";
 NSString *const MJRefreshHeaderNoneLastDateText = @"MJRefreshHeaderNoneLastDateText";
 
-NSString *const MJRefreshDidChangeLanguageNotification = @"MJRefreshDidChangeLanguageNotification";
+NSNotificationName const MJRefreshDidChangeLanguageNotification = @"MJRefreshDidChangeLanguageNotification";
